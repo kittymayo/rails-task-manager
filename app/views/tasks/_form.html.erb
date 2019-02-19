@@ -1,14 +1,18 @@
-<form action="/tasks" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= form_for(task) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
 
-  <label for="title">Title: </label>
-  <input type="string" name="task[title]" id="title">
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: 'form-control' %>
+  </div>
 
-  <label for="details">Details: </label>
-  <input type="text" name="task[details]" id="details">
+  <div class="form-group">
+    <%= f.label :completed %>
+    <%= f.check_box :completed, class: 'form-control' %>
+  </div>
 
-  <label for="completed">Completed? </label>
-  <input type="checkbox" name="task[completed]" value="completed">
-
-  <input type="submit">
-</form>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

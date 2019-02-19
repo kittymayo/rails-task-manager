@@ -1,5 +1,6 @@
 
-<h1><%= @task[:title]  %></h1>
-<p><%= @task[:details] %></p>
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
 <%= link_to "return to tasks", tasks_path %>
-<%= link_to "modify task", new_path %>
+<%= link_to "modify task", edit_task_path(@task) %>
+<%= link_to "delete task", delete_task_path %>
